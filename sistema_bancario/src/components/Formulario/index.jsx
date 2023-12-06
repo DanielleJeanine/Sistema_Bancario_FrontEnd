@@ -4,6 +4,7 @@ export default function Formulario(props) {
 
     return (
         <>
+        <section className='inputDados'>
             <div className='container'>
                 <label>{props.label}</label>
                 <input
@@ -16,6 +17,7 @@ export default function Formulario(props) {
                 />
 
             </div>
+            </section>
         </>
 
     );

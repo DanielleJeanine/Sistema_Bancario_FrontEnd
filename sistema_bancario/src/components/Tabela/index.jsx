@@ -5,11 +5,13 @@ export default function Tabela({listar}, props) {
         <>
             <table>
                 <thead>
-                    <tr>
+                    <section className='dadosPessoais'>
+                    <tr className='informacoesDados'>
                         <th>Nome</th>
                         <th>Cpf</th>
                         <th>Email</th>
                     </tr>
+                    </section>
                 </thead>
 
                 <tbody>

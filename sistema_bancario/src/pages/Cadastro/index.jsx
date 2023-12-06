@@ -41,7 +41,6 @@ export default function Cadastro() {
 
 
 
-
     //Cadastro de Endereço
     const verificarNumero = (numero) => /^[0-9]+$/.test(numero);
     const validaCep = (cep) => cep.length == 8 && verificarNumero(cep);
@@ -94,108 +93,106 @@ export default function Cadastro() {
 
     return (
         <>
-            <main>
+            <main className="telaToda">
                 <h1>FICHA DE CADASTRO</h1>
-                <p>{JSON.stringify(objCliente)}</p>
-                <section>
-                    <form onSubmit={cadastrarCliente}>
-                        <div className="dados_pessoais">
-                            <h2>Dados Pessoais</h2>
-                            <Formulario
-                                label='Nome:'
-                                type='text'
-                                name='nome'
-                                placeholder='Digite seu nome'
-                                aoDigitar={aoDigitar}
+                <div className="esmagaFormulario">
+                    <section className="formulario">
+                        <section>
+                            <form onSubmit={cadastrarCliente}>
+                                <div className="dados_pessoais">
+                                    <h2>Dados Pessoais</h2>
+                                    <div className="inputComponentDadosPessoais">
+                                        <Formulario
+                                            label='Nome: '
+                                            type='text'
+                                            name='nome'
+                                            placeholder='Digite seu nome'
+                                            aoDigitar={aoDigitar}
 
-                            />
+                                        />
 
-                            <Formulario
-                                label='Cpf:'
-                                type='text'
-                                name='cpf'
-                                placeholder='Digite seu cpf'
-                                aoDigitar={aoDigitar}
+                                        <Formulario
+                                            label='Cpf: '
+                                            type='text'
+                                            name='cpf'
+                                            placeholder='Digite seu cpf'
+                                            aoDigitar={aoDigitar}
 
-                            />
+                                        />
 
-                            <Formulario
-                                label='E-mail:'
-                                type='email'
-                                name='email'
-                                placeholder='Digite seu email'
-                                aoDigitar={aoDigitar}
+                                        <Formulario
+                                            label='E-mail: '
+                                            type='email'
+                                            name='email'
+                                            placeholder='Digite seu email'
+                                            aoDigitar={aoDigitar}
 
-                            />
-                        </div>
-                        <div className="endereco">
-                            <h2>Endereço</h2>
-
-                            <div className="div_cep">
-
-                                <Formulario
-                                    id="cep"
-                                    label='Cep:'
-                                    type='text'
-                                    placeholder='Informe seu CEP'
-                                />
-                            </div>
+                                        />
+                                    </div>
 
 
-                            <Formulario
-                                id='rua'
-                                label='Rua:'
-                                type='text'
-                                placeholder='Logradouro'
-                            />
+                                    <div className="endereco">
+                                        <h2>Endereço</h2>
+                                        <div className="inputComponentEndereco">
 
-                            <Formulario
-                                id='numero'
-                                label='Número:'
-                                type='text'
-                                placeholder='Número'
-                            />
-
-                            <Formulario
-                                id='bairro'
-                                label='Bairro:'
-                                type='text'
-                                placeholder='Bairro'
-                            />
-
-                            <Formulario
-                                id='cidade'
-                                label='Cidade:'
-                                type='text'
-                                placeholder='Cidade'
-                            />
-
-                            <Formulario
-                                id='estado'
-                                label='UF:'
-                                type='text'
-                                placeholder='Unidade Federal'
-                            />
+                                            <Formulario
+                                                id="cep"
+                                                label='Cep:'
+                                                type='text'
+                                                placeholder='Informe seu CEP'
+                                            />
 
 
 
-                        </div>
+                                            <Formulario
+                                                id='rua'
+                                                label='Rua:'
+                                                type='text'
+                                                placeholder='Logradouro'
+                                            />
 
-                        <div className="submeter">
-                            <Formulario
+                                            <Formulario
+                                                id='numero'
+                                                label='Número:'
+                                                type='text'
+                                                placeholder='Número'
+                                            />
 
-                            type='submit'
-                            placeholder='Enviar'
-                            on
-                            />
-                        </div>
-                    </form>
+                                            <Formulario
+                                                id='bairro'
+                                                label='Bairro:'
+                                                type='text'
+                                                placeholder='Bairro'
+                                            />
+
+                                            <Formulario
+                                                id='cidade'
+                                                label='Cidade:'
+                                                type='text'
+                                                placeholder='Cidade'
+                                            />
+
+                                            <Formulario
+                                                id='estado'
+                                                label='UF:'
+                                                type='text'
+                                                placeholder='Unidade Federal'
+                                            />
+                                        
 
 
-                    <div>
-                        <ExibirCliente/>
-                    </div>
-                </section>
+
+                                    </div>
+                                    </div>
+                                </div>
+                                <div className="submeter">
+                                <button className="buttonEnviar">Enviar</button>
+
+                                </div>
+                            </form>
+                        </section>
+                    </section>
+                </div>
             </main>
         </>
 
