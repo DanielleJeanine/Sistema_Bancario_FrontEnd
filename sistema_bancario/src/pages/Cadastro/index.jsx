@@ -1,9 +1,48 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import Formulario from "../../components/Formulario";
+import { ExibirCliente } from "../ExibirClientes";
 import "./style.css";
 
 export default function Cadastro() {
+    //Cadastro de  clientes
 
+
+    const cliente = {
+        "nome": '',
+        "cpf": '',
+        "email": ''
+    }
+
+    const [objCliente, setObjCliente] = useState(cliente);
+
+    //Obtendo dados do Formulario
+
+    function aoDigitar(e) {
+        console.log(e.target);
+        setObjCliente({ ...objCliente, [e.target.name]: e.target.value })
+    }
+
+    const cadastrarCliente = (elemento) => {
+        elemento.preventDefault();
+        fetch("http://localhost:8080/cliente/cadastro", {
+            method: 'post',
+            body: JSON.stringify(objCliente),
+            headers: {
+                'Content-type': 'application/json',
+                'Accept': 'application/json'
+            }
+        }).then(retorno => retorno.json()).then(retorno_convertido => {
+            console.log(retorno_convertido);
+        })
+
+        // alert("Cliente cadastrado com sucesso")
+    }
+
+
+
+
+
+    //Cadastro de Endereço
     const verificarNumero = (numero) => /^[0-9]+$/.test(numero);
     const validaCep = (cep) => cep.length == 8 && verificarNumero(cep);
 
@@ -14,7 +53,7 @@ export default function Cadastro() {
         document.getElementById('estado').value = endereco.uf;
     }
 
-    function limparEndereco(endereco) {
+    function limparEndereco() {
         document.getElementById('rua').value = '';
         document.getElementById('numero').value = '';
         document.getElementById('bairro').value = '';
@@ -31,12 +70,12 @@ export default function Cadastro() {
             const dados = await fetch(url);
             const endereco = await dados.json();
 
-            if(endereco.hasOwnProperty('erro')){
+            if (endereco.hasOwnProperty('erro')) {
                 document.getElementById('rua').value = 'CEP não encontrado!';
             } else {
                 console.log(endereco)
                 preencherEndereco(endereco);
-                
+
             }
 
         } else {
@@ -51,18 +90,41 @@ export default function Cadastro() {
     }, []);
 
 
+
+
     return (
         <>
             <main>
                 <h1>FICHA DE CADASTRO</h1>
+                <p>{JSON.stringify(objCliente)}</p>
                 <section>
-                    <form>
+                    <form onSubmit={cadastrarCliente}>
                         <div className="dados_pessoais">
                             <h2>Dados Pessoais</h2>
                             <Formulario
                                 label='Nome:'
                                 type='text'
+                                name='nome'
                                 placeholder='Digite seu nome'
+                                aoDigitar={aoDigitar}
+
+                            />
+
+                            <Formulario
+                                label='Cpf:'
+                                type='text'
+                                name='cpf'
+                                placeholder='Digite seu cpf'
+                                aoDigitar={aoDigitar}
+
+                            />
+
+                            <Formulario
+                                label='E-mail:'
+                                type='email'
+                                name='email'
+                                placeholder='Digite seu email'
+                                aoDigitar={aoDigitar}
 
                             />
                         </div>
@@ -121,10 +183,18 @@ export default function Cadastro() {
 
                         <div className="submeter">
                             <Formulario
-                                type='submit'
+
+                            type='submit'
+                            placeholder='Enviar'
+                            on
                             />
                         </div>
                     </form>
+
+
+                    <div>
+                        <ExibirCliente/>
+                    </div>
                 </section>
             </main>
         </>

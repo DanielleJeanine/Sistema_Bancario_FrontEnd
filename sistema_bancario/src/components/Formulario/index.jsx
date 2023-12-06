@@ -9,8 +9,10 @@ export default function Formulario(props) {
                 <input
                     id={props.id}
                     type={props.type}
+                    name={props.name}
                     placeholder={props.placeholder}
                     required={props.required}
+                    onChange={props.aoDigitar}
                 />
 
             </div>
