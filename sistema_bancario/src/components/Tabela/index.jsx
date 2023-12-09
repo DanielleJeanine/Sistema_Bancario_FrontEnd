@@ -1,26 +1,39 @@
-import './style.css';
+import { useNavigate } from "react-router-dom";
+import './tabela.css';
 
-export default function Tabela({listar}, props) {
+
+export default function Tabela({listar}) {
+
+    const navigate = useNavigate();
+
+    function verDetalhes(idCliente) {
+        navigate(`/detalhesCliente/${idCliente}`);
+    }
+    
+    
+
+
     return (
         <>
-            <table>
-                <thead>
-                    <section className='dadosPessoais'>
-                    <tr className='informacoesDados'>
-                        <th>Nome</th>
-                        <th>Cpf</th>
-                        <th>Email</th>
+        
+            <table className='tabela'>
+                <thead className='cabecalho'>
+                    <tr>
+                        <th className='nome'>Nome</th>
+                        <th className='cpf'>Cpf</th>
+                        <th className='email'>Email</th>
+                        <th>Ver Detalhes</th>
                     </tr>
-                    </section>
                 </thead>
 
-                <tbody>
+                <tbody className='corpo'>
                     {
                         listar.map((cliente, index)=>(
                             <tr key={index}>
                                 <td>{cliente.nome}</td>
                                 <td>{cliente.cpf}</td>
                                 <td>{cliente.email}</td>
+                                <td><button onClick={() => verDetalhes(cliente.id)}>Ver detalhes</button></td>
 
                             </tr>
                         ))

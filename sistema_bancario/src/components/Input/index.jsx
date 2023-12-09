@@ -1,19 +1,20 @@
-import './style.css';
+import './input.css';
 
-export default function Formulario(props) {
+export default function Input(props) {
 
     return (
         <>
         <section className='inputDados'>
             <div className='container'>
-                <label>{props.label}</label>
+                <label className='input_label'>{props.label}</label>
                 <input
+                    className='inputbox'
                     id={props.id}
                     type={props.type}
                     name={props.name}
                     placeholder={props.placeholder}
-                    required={props.required}
                     onChange={props.aoDigitar}
+                    required
                 />
 
             </div>

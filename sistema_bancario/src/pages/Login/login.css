@@ -1,0 +1,46 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:#2e2e2e;
+}
+
+.caixa_login{
+    display: flex;
+    align-items: center;
+    height: 100vh;
+}
+
+.formulario{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 500px;
+}
+
+.enviar{
+    display: flex;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.enviar button{
+    background-color:#167d7f;
+    color: white;
+    width: 150px;
+    height: 50px;
+    border-radius: 10px;
+    font-size: 20px;
+    font-weight:bold;
+}
+

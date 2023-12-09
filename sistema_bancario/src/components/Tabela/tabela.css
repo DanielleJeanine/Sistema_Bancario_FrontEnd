@@ -1,0 +1,30 @@
+.tabela{
+    border: 5px solid #167d7f ;
+    width: 100%;
+    border-radius: 5px;
+    padding: 10px;
+}
+
+
+.cabecalho th{
+    color: #3de3e6;
+    border: 3px solid #167d7f ;
+    align-items: center;
+    font-size: 25px;
+}
+
+.corpo td{
+    border: 1px solid #167d7f ;
+    padding: 10px;
+    color: white;
+    font-size: 20px;
+
+}
+
+.corpo button{
+    background-color: #167d7f;
+    border-radius: 5px;
+    color: white;
+    width: 200px;
+    font-weight: normal;
+}

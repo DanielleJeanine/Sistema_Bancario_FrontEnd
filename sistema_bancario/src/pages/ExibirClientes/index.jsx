@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import Tabela from "../../components/Tabela";
+import './exibirClientes.css'
 
-export function ExibirCliente(){
+export default function ExibirCliente(){
 
     const [clientes, setClientes] = useState([]);
 
@@ -14,11 +15,11 @@ export function ExibirCliente(){
 
     return(
         <>
-        <main>
-            <div>
+        <main className="tela_principal">
+            <div className="titulo">
                 <h1>Lista de Clientes</h1>
             </div>
-            <div>
+            <div className="tabela_clientes">
                 <Tabela listar={clientes} />
             </div>
         </main>

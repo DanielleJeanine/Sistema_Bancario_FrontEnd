@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+
+
+.input_label{
+    font-size: 20px;
+    color: #3de3e6;
+    transition: .5s;
+    cursor: text;
+
+}
+
+.inputbox{
+    position: relative;
+    background-color:#167d7f;
+    border-radius: 5px;
+    font-size: 20px;
+    width: 75%;
+    padding: 0 20px;
+    color: white;
+    display: block;
+
+}

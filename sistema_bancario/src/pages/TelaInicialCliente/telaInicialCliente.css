@@ -1,0 +1,63 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    background-color:#2e2e2e;
+}
+
+.cabecalho{
+
+    margin: 20px;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.cabecalho h3{
+    font-size: 20px;
+    margin-top: 30px;
+    color: white;
+}
+
+.icones_operacoes{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+    margin-top: 30px;
+
+}
+
+.icones_operacoes button{
+    background-color: aqua;
+    border: 2px solid white;
+    width: 100px;
+}
+
+.fileira1{
+    display: flex;
+    gap: 30px;
+}
+
+.fileira2{
+    display: flex;
+    gap: 30px;
+}
+
+.div_saque{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+ img{
+    width: 100px;
+}
+
