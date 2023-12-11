@@ -21,12 +21,6 @@ export default function DetalhesCliente() {
     }, [id]);
     
 
-    // useEffect(() => {
-    //     fetch(`http://localhost:8080/cliente/perfil/${id}`)
-    //         .then((resposta) => resposta.json())
-    //         .then((resposta_convertida) => setCliente(resposta_convertida));
-    // }, [id]); // Certifique-se de incluir id como dependência no array de dependências do useEffect
-
     return (
         <>
             <main className='principal'>
@@ -81,15 +75,7 @@ export default function DetalhesCliente() {
                         </div>
 
                         <div>
-                            <h1>Dados Bancários</h1>
-                            <div className='fileira'>
-                                <p>
-                                    <span>Número da Conta:</span>
-                                </p>
-                                <p>
-                                    <span>Saldo Atual</span>
-                                </p>
-                            </div>
+
                         </div>
                     </div>
                 </section>

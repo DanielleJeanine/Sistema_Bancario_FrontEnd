@@ -1,0 +1,44 @@
+*{
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+    background-color: #2e2e2e;
+}
+
+main{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.main h1{
+    color: #3de3e6;
+    font-size: 50px;
+}
+
+.main h3{
+    color: #3de3e6;
+    font-size: 30px;
+}
+
+.entrar{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 50px;
+}
+
+.main button{
+    color: white;
+    background-color:#167d7f;
+    font-size: 25px;
+    font-weight: bold;
+    margin: 20px;
+    height: 50px;
+    border-radius: 8px;
+}

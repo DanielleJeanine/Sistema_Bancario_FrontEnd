@@ -17,12 +17,6 @@ export default function CadastroCliente() {
             "bairro": '',
             "rua": '',
             "complemento": ''
-        },
-        "conta": {
-            "numeroDaConta": " ",
-            "statusAtivo": true,
-            "tipoDeConta": "",
-            "saldo": 0
         }
     }
 
@@ -48,17 +42,7 @@ export default function CadastroCliente() {
                     [enderecoField]: value
                 }
             }));
-        } else if (name.startsWith('conta.')) {
-            const contaField = name.split('.')[1];
-            setObjCliente(prevState => ({
-                ...prevState,
-                conta: {
-                    ...prevState.conta,
-                    [contaField]: value
-                }
-            }));
-
-        } else {
+        }  else {
             setObjCliente(prevState => ({
                 ...prevState,
                 [name]: value
@@ -68,7 +52,6 @@ export default function CadastroCliente() {
 
 
     const cadastrarCliente = (elemento) => {
-        elemento.preventDefault();
         fetch("http://localhost:8080/cliente/cadastro", {
             method: 'post',
             body: JSON.stringify(objCliente),
@@ -161,6 +144,7 @@ export default function CadastroCliente() {
                             <h2>Dados Pessoais</h2>
                             <div className="fileira">
                                 <Input
+                                    className="mais_largo"
                                     label='Nome: '
                                     type='text'
                                     name='nome'
@@ -187,6 +171,7 @@ export default function CadastroCliente() {
 
 
                                 <Input
+                                    className="mais_largo"
                                     label='E-mail: '
                                     type='email'
                                     name='email'
@@ -303,47 +288,6 @@ export default function CadastroCliente() {
                                     name='endereco.estado'
                                     placeholder='Unidade Federal'
                                 />
-
-                            </div>
-
-                        </div>
-
-                        <div className="dados_bancario">
-                            <h2>Dados Bancarios</h2>
-                            <div className="fileira">
-                                <Input
-                                    label='Numero da Conta: '
-                                    type='text'
-                                    name='conta.numero'
-                                    placeholder='Informe numero da conta'
-                                    aoDigitar={aoDigitar}
-
-                                />
-                                <Input
-                                    label='Ativo: '
-                                    type='checkbox'
-                                    name='ativo'
-                                />
-
-
-                                <Input
-                                    label='Saldo: '
-                                    type='text'
-                                    name='conta.saldo'
-                                    placeholder='Informe saldo inicial'
-                                    aoDigitar={aoDigitar}
-
-                                />
-
-                                <Input
-                                    label='Tipo de conta: '
-                                    type='text'
-                                    name='conta.tipoDeConta'
-                                    placeholder='Tipo de Conta'
-                                    aoDigitar={aoDigitar}
-
-                                />
-
 
                             </div>
 

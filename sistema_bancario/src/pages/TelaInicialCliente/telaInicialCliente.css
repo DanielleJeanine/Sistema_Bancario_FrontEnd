@@ -20,7 +20,7 @@
 }
 
 .cabecalho h3{
-    font-size: 20px;
+    font-size: 30px;
     margin-top: 30px;
     color: white;
 }
@@ -35,29 +35,30 @@
 
 }
 
-.icones_operacoes button{
-    background-color: aqua;
-    border: 2px solid white;
-    width: 100px;
-}
-
 .fileira1{
     display: flex;
+    flex-direction: column;
     gap: 30px;
+}
+
+.fileira1 p{
+    color: white;
+}
+
+.fileira1 span{
+    color: #3de3e6;
+    font-size: 18px;
 }
 
 .fileira2{
     display: flex;
+    justify-content: center;
     gap: 30px;
 }
 
-.div_saque{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
- img{
+
+
+img{
     width: 100px;
 }
 
